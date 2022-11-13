@@ -9,6 +9,10 @@
 // ==/UserScript==
 (function () {
     let clipboard = document.getElementsByTagName("clipboard-copy");
+    //return is clipboard-copy is not exist
+    if (clipboard.length == 0) {
+        return
+    }
 //prepend 'git clone' to clipboard's value attribute
     clipboard[0].setAttribute("value", "git clone " + clipboard[0].getAttribute("value"));
 })();
